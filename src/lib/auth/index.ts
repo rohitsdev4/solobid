@@ -22,15 +22,10 @@ export async function getCurrentUser() {
         name: true,
         image: true,
         emailVerified: true,
-        businessName: true,
-        businessEmail: true,
-        businessPhone: true,
-        businessAddress: true,
-        currency: true,
-        logoUrl: true,
         onboarded: true,
         plan: true,
         createdAt: true,
+        business: true,
       },
     })
 
