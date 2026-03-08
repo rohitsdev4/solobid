@@ -116,7 +116,7 @@ export async function PUT(
     return NextResponse.json({ success: true, client })
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.errors[0].message }, { status: 400 })
+      return NextResponse.json({ error: error.issues[0].message }, { status: 400 })
     }
     console.error("Update client error:", error)
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 })
