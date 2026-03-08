@@ -119,7 +119,7 @@ export async function POST(
     return NextResponse.json({ success: true, emailId: data?.id })
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.errors[0].message }, { status: 400 })
+      return NextResponse.json({ error: error.issues[0].message }, { status: 400 })
     }
     console.error("Send invoice error:", error)
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 })
