@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
       const brandColor = invoice.business.brandColor || "#2563eb"
       const balance = Number(invoice.total) - Number(invoice.amountPaid)
 
-      function fmt(amount: number) {
+      const fmt = (amount: number) => {
         return new Intl.NumberFormat("en-US", {
           style: "currency",
           currency: invoice.currency,
