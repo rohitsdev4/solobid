@@ -30,7 +30,7 @@ export async function GET(
     const templateId = invoice.templateId || "modern"
     const brandColor = invoice.business.brandColor || "#2563eb"
 
-    function fmt(amount: number) {
+    const fmt = (amount: number) => {
       return new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: invoice.currency,
