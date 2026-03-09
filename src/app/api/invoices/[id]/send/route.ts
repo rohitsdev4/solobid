@@ -36,7 +36,7 @@ export async function POST(
     const viewUrl = `${appUrl}/api/invoices/${invoice.id}/pdf`
     const brandColor = invoice.business.brandColor || "#2563eb"
 
-    function fmt(amount: number) {
+    const fmt = (amount: number) => {
       return new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: invoice.currency,
