@@ -27,3 +27,8 @@ export function calculateDueDate(terms: string): Date {
     default: return new Date(now.setDate(now.getDate() + 30))
   }
 }
+
+export function generateEstimateNumber(): string {
+  const timestamp = Date.now().toString(36).toUpperCase()
+  return `EST-${timestamp}`
+}
