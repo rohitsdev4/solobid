@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, Suspense } from "react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -92,7 +92,7 @@ function StatusBadge({ status }: { status: string }) {
   )
 }
 
-export default function InvoicesPage() {
+function InvoicesContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -518,5 +518,13 @@ export default function InvoicesPage() {
         )}
       </Card>
     </div>
+  )
+}
+
+export default function InvoicesPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InvoicesContent />
+    </Suspense>
   )
 }

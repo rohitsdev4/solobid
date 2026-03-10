@@ -288,7 +288,7 @@ export default function PricingPage() {
         {/* Feature Comparison Table */}
         <div className="mt-20">
           <h2 className="text-center text-2xl font-bold text-gray-900">Feature Comparison</h2>
-          <p className="mt-2 text-center text-sm text-gray-500">Everything you need, nothing you don't</p>
+          <p className="mt-2 text-center text-sm text-gray-500">Everything you need, nothing you don&apos;t</p>
 
           <div className="mt-8 overflow-hidden rounded-xl border border-gray-200">
             <table className="w-full">
@@ -335,7 +335,7 @@ export default function PricingPage() {
         {/* FAQ */}
         <div className="mt-20">
           <h2 className="text-center text-2xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <p className="mt-2 text-center text-sm text-gray-500">Got questions? We've got answers.</p>
+          <p className="mt-2 text-center text-sm text-gray-500">Got questions? We&apos;ve got answers.</p>
           <div className="mx-auto mt-8 max-w-2xl">
             {FAQS.map((faq, i) => (
               <FaqItem key={i} q={faq.q} a={faq.a} />
