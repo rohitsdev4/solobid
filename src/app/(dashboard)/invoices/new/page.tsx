@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -40,7 +40,7 @@ function addDays(date: Date, days: number): string {
   return d.toISOString().split("T")[0]
 }
 
-export default function NewInvoicePage() {
+function NewInvoiceContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const preselectedClientId = searchParams.get("client")
@@ -553,5 +553,13 @@ export default function NewInvoicePage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function NewInvoicePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <NewInvoiceContent />
+    </Suspense>
   )
 }
